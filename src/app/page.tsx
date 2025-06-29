@@ -27,9 +27,9 @@ export default function Home() {
         </div>
         <div className="page-body">
           <div className="left">
-            <h1>We're enhancing your experience</h1>
+            <h1>We&#39;re enhancing your experience</h1>
             <p className="title-desc">
-              We're redesigning our website to serve you better.
+              We&#39;re redesigning our website to serve you better.
               For general enquiries, please fill out the form to get in touch.
             </p>
             <div className="socials">
