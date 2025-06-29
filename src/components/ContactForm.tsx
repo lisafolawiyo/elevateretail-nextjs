@@ -47,7 +47,6 @@ export default function CheckoutForm() {
 
 
     const onSubmit: SubmitHandler<FormFields> = async (data) => {
-        console.log("Data :" + data.name, data.email, data.phone, data.referer, data.message);
 
         const formData = {
             name: data.name,
