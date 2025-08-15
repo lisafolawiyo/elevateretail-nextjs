@@ -163,3 +163,92 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.link-btn1 {
+  width: max-content;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+  &:hover {
+      .btn-wrap {
+          .btn-left {
+              background-color: $yellow;
+              span {
+                color: $black;
+              }
+          }
+          .btn-right {
+              background-color: $yellow;
+              .btn-right-inner {
+                  background-color: $yellow;
+                  .btn-icon1 {
+                      transform: translateX(27px);
+                      color: $black;
+                  }
+                  .btn-icon2 {
+                      transform: translateX(27px);
+                      color: $black;
+                  }
+              }
+          }
+      }
+  }
+  .btn-wrap {
+      display: flex;
+      .btn-left {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: max-content;
+          height: 40px;
+          padding: 0px 15px;
+          background-color: $sapphire;
+          border-radius: 20px;
+          transition: all 0.2s ease-in-out;
+          span {
+            color: $yellow;
+            font-family: var(--font-century-gothic), sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            margin-bottom: 3px;
+          }
+      }
+      .btn-right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: $sapphire;
+          transition: all 0.2s ease-in-out;
+          // border: 1px solid #fff;
+          .btn-right-inner {
+              display: flex;
+              flex-wrap: nowrap;
+              justify-content: center;
+              align-items: center;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              overflow: hidden;
+              background-color: $sapphire;
+              transition: all 0.2s ease-in-out;
+              .btn-icon {
+                  font-size: 15px;
+                  position: relative;
+                  transition: all 0.2s ease-in-out;
+                  color: $yellow;
+              }
+              .btn-icon1 {
+                  left: -20px;
+              }
+              .btn-icon2 {
+                  top: 0px;
+                  left: -7px;
+              }
+          }
+      }
+  }
+}

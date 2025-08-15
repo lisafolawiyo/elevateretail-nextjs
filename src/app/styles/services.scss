@@ -1,0 +1,193 @@
+@use './breakpoints' as u;
+@use './variables' as *;
+
+.service-page {
+    width: 100%;
+    background-color: $black;
+    .service-page-inner {
+        width: 100%;
+        padding: 100px 20px 0px 20px;
+         @include u.breakpoint(md) {
+            padding: 100px 60px 0px 60px;
+         }
+         .hero {
+            width: 100%;
+            padding-bottom: 60px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid $gray-x11;
+            @include u.breakpoint(md) {
+                padding-bottom: 80px;
+            }
+            .top {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 30px;
+                @include u.breakpoint(md) {
+                    margin-bottom: 0px;
+                }
+                .left {
+                    width: 100%;
+                    @include u.breakpoint(md) {
+                        width: 50%;
+                    }
+                    .subject-tag {
+                        display: flex;
+                        align-items: flex-end;
+                        width: 100%;
+                        margin-bottom: 10px;
+                        span {
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            background-color: $gray-x11;
+                            margin-right: 10px;
+                            margin-bottom: 3px;
+                        }
+                        .tag-text {
+                            font-family: var(--font-Poppins), sans-serif;
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: $gray-x11;
+                            margin: 0;
+                            padding: 0;
+                            line-height: 1;
+                        }
+                    }
+                    .hero-text1 {
+                        font-family: var(--font-Poppins), sans-serif;
+                        font-weight: 400;
+                        font-size: 38px;
+                        line-height: 1;
+                        color: $white;
+                        @include u.breakpoint(md) {
+                            font-size: 62px;
+                        }
+                    }
+                }
+                .right {
+                    display: none;
+                    @include u.breakpoint(md) {
+                        width: 50%;
+                        display: block;
+                    }
+                }
+            }
+            .bottom {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .left {
+                    display: none;
+                    @include u.breakpoint(md) {
+                        width: 65%;
+                        display: block;
+                    }
+                }
+                .right {
+                    width: 100%;
+                    @include u.breakpoint(md) {
+                        width: 65%;
+                    }
+                    h2 {
+                        font-family: var(--font-Poppins), sans-serif;
+                        font-weight: 200;
+                        font-size: 24px;
+                        line-height: 1.2;
+                        color: $white;
+                        @include u.breakpoint(md) {
+                            font-size: 38px;
+                            line-height: 1.1;
+                        }
+                    }
+                }
+            }
+         }
+         .services {
+            width: 100%;
+            .service-item {
+                width: 100%;
+                padding-bottom: 100px;
+                border-bottom: 1px solid $gray-x11;
+                .service-item-head {
+                    width: 100%;
+                    // border: 1px solid #fff;
+                    margin-bottom: 30px;
+                    .service-name {
+                        font-family: var(--font-Poppins), sans-serif;
+                        font-weight: 400;
+                        font-size: 14vw;
+                        // font-size: 60px;
+                        // line-height: 1.2;
+                        color: $white;
+                        @include u.breakpoint(md) {
+                            font-size: 15vw;
+                            letter-spacing: -10px;
+                        }
+                        @include u.breakpoint(lg) {
+                            // font-size: 100vw;
+                            // line-height: 1;
+                        }
+                    }
+                }
+                .service-item-body {
+                    width: 100%;
+                    @include u.breakpoint(md) {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .service-item-left {
+                        width: 100%;
+                        // border: 1px solid yellow;
+                        margin-bottom: 20px;
+                        @include u.breakpoint(md) {
+                            width: 45%;
+                            padding-right: 50px;
+                            margin-bottom: 0px;
+                        }
+                        h3 {
+                            font-family: var(--font-Poppins), sans-serif;
+                            font-weight: 300;
+                            font-size: 24px;
+                            line-height: 1.2;
+                            color: $white;
+                            @include u.breakpoint(md) {
+                                font-size: 30px;
+                                line-height: 1.3;
+                            }  
+                        }
+                    }
+                    .service-item-right {
+                        width: 100%;
+                        @include u.breakpoint(md) {
+                            width: 55%;
+                            padding-left: 50px;
+                        }
+                        .service-list-container {
+                            width: 100%;
+                            .list-item {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                padding: 20px 0px;
+                                border-bottom: 1px solid #555555;
+
+                                font-family: var(--font-Poppins), sans-serif;
+                                font-weight: 400;
+                                font-size: 18px;
+                                // text-transform: capitalize;
+                                color: $white;
+                                .list-count {
+
+                                }
+                                .list-item-name {
+                                    margin-left: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+         }
+    }
+}

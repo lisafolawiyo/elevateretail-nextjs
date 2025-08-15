@@ -36,6 +36,7 @@
     "react-hot-toast": "^2.5.2",
     "react-paystack": "github:Akpan20/react-paystack",
     "resend": "^4.6.0",
+    "swiper": "^11.2.10",
     "tailwind-merge": "^3.3.0",
     "zod": "^3.24.4",
     "zustand": "^5.0.4"

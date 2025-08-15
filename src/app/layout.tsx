@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./styles/globals.scss";
+import "./styles/navbar.scss";
+import "./styles/footer.scss";
+import "./styles/home.scss";
+import "./styles/blog.scss";
+import "./styles/single-blog.scss";
+import "./styles/services.scss";
+import "./styles/contact.scss";
+import "./styles/expertise.scss";
+import "./styles/text-marquee.scss";
 import { Toaster } from "react-hot-toast";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Poppins = localFont({
   src: [
@@ -51,8 +62,8 @@ const Poppins = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Lisa Folawiyo | Luxury African Fashion with Hand Embellishment",
-  description: "Discover Lisa Folawiyo's luxury African fashion, where hand embellishment meets contemporary elegance. Shop our latest collections today.",
+  title: "Elevate Retail",
+  description: "",
 };
 
 export default function RootLayout({
@@ -64,7 +75,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${Poppins.variable} antialiased`}>
         <Toaster position="top-right" reverseOrder={false} /> 
+          <Navbar />
             {children}
+          <Footer />
       </body>
     </html>
   );

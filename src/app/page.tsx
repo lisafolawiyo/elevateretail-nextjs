@@ -1,69 +1,35 @@
-import React from "react";
-import "./styles/home.scss";
-import Image from "next/image";
+import React, { Suspense } from "react";
 import { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { getPostCategories, getPosts } from '@/lib/wordpress/post';
+import HomeHeroSection from "@/components/HomeHeroSection";
+import WhoWeAreSection from "@/components/WhoWeAreSection";
+import OurWorkSection from "@/components/OurWorkSection";
+import OurExpertise from "@/components/OurExpertise";
+import TextMarquee from "@/components/TextMarquee";
+import BlogReview from "@/components/BlogReview";
+import { NoteCategory } from "@/lib/types";
+import Skeleton from "@/components/Skeleton";
 
 export const metadata: Metadata = {
-  title: "Elevate Retail | Elevate Your Brand with High-Performance Web & E-commerce Solutions",
-  description: "We design and develop custom websites and e-commerce platforms that help retail and service businesses in Lagos and beyond stand out, sell more, and scale fast.",
+  title: "Web design, branding, and digital marketing agency in Lagos | Elevate Retail",
+  description: "We help businesses stand out, connect, and grow through creative design, strategic marketing, and powerful digital solutions",
 };
 
-export default function Home() {
+export default async function Home() {
+  const categories: NoteCategory[] = await getPostCategories();
+  
+  const post_data = await getPosts("", 21, "", parseInt("1",10), 4,);
+  const posts = post_data.posts;
   return (
-    <section className="home-hero-section">
-      <div className="page-wrap">
-        <div className="header">
-          <div className="logo-wrap">
-            <Image 
-            src="/images/logo-white.png" 
-            alt="Elevate Retail Logo" 
-            fill
-            style={{ objectFit: 'contain' }} // 'cover' or 'contain'
-            />
-          </div>
-        </div>
-        <div className="page-body">
-          <div className="left">
-            <h1>We&#39;re enhancing your experience</h1>
-            <p className="title-desc">
-              We&#39;re redesigning our website to serve you better.
-              For general enquiries, please fill out the form to get in touch.
-            </p>
-            <div className="socials">
-              <h3>Follow us</h3>
-              <div className="social-icons">
-                <a
-                className="icon-link-wrap"
-                href="https://www.instagram.com/elevate_retail/"
-                target="_blank"
-                rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faInstagram} className="social-icon" />
-                </a>
-                <a
-                className="icon-link-wrap"
-                href="https://www.linkedin.com/company/elevate-retaiil/"
-                target="_blank"
-                rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
-                </a>
-                <a
-                className="icon-link-wrap"
-                href="https://www.youtube.com/channel/UCYYrfW-yHvn3n2nNmb5MhNA"
-                target="_blank"
-                rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faYoutube} className="social-icon" />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="right">
-            <ContactForm />
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="home-page">
+      <HomeHeroSection />
+      <WhoWeAreSection />
+      <OurWorkSection />
+      <OurExpertise />
+      <TextMarquee />
+      <Suspense fallback={<Skeleton/>}>
+        <BlogReview posts={posts} categories={categories}/>
+      </Suspense>
+    </div>
   );
 }

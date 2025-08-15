@@ -1,0 +1,374 @@
+@use './breakpoints' as u;
+@use './variables' as *;
+
+.contact-page {
+    width: 100%;
+    background-color: $black;
+    padding: 100px 20px 50px 20px;
+    @include u.breakpoint(md) {
+        padding: 150px 60px 50px 60px;
+    }
+    .inner-wrap {
+        width: 100%;
+        @include u.breakpoint(sm) {
+            
+        }
+        // border: 1px solid #fff;
+        .header {
+            width: 100%;
+            .subject-tag {
+                display: flex;
+                align-items: flex-end;
+                width: 100%;
+                margin-bottom: 10px;
+                @include u.breakpoint(md) {
+                    margin-bottom: 20px;
+                }
+                span {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    margin-right: 10px;
+                    margin-bottom: 3px;
+                }
+                .tag-text {
+                    font-family: var(--font-Poppins), sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $white;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1;
+                }
+            }
+            .head-text {
+                font-family: var(--font-Poppins), sans-serif;
+                font-weight: 400;
+                font-size: 58px;
+                line-height: 1;
+                color: $white;
+                @include u.breakpoint(md) {
+                    font-size: 8vw;
+                    max-width: 800px;
+                }
+            }
+        }
+        .page-body {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            @include u.breakpoint(lg) {
+                flex-direction: row;
+                margin-top: 100px;
+            }
+            .left {
+                width: 100%;
+                @include u.breakpoint(lg) {
+                    width: 300px;
+                }
+                @include u.breakpoint(xl) {
+                    width: 400px;
+                }
+                p {
+                    font-family: var(--font-Poppins), sans-serif;
+                    font-weight: 300;
+                    font-size: 16px;
+                    color: $gray-x11;
+                }
+                .socials {
+                    width: 100%;
+                    margin-top: 30px;
+                    h3 {
+                        font-family: var(--font-Poppins), sans-serif;
+                        font-weight: 300;
+                        font-size: 16px;
+                        color: $white; 
+                    }
+                    .social-icons {
+                        width: max-content;
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-top: 10px;
+                        .icon-link-wrap {
+                            width: 35px;
+                            height: 35px;
+                            background-color: $yellow;
+                            border-radius: 50%;
+                            margin-right: 7px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: all 0.2s ease-in-out;
+                            &:hover {
+                                background-color: $sapphire;
+                                .social-icon {
+                                    color: $yellow;
+                                }
+                            }
+                            .social-icon {
+                                font-size: 16px;
+                                transition: all 0.2s ease-in-out;
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+                .hate-forms {
+                    width: max-content;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 30px;
+                    @include u.breakpoint(md) {
+                        flex-direction: row;
+                        align-items: center;
+                    }
+                    @include u.breakpoint(md) {
+                        margin-top: 20px;
+                    }
+                    .text-left {
+                        margin-right: 10px;
+                        font-size: 16px;
+                        color: $gray-x11;
+                        @include u.breakpoint(lg) {
+                            font-size: 15px;
+                        }
+                    }
+                    .f-nav-itemB-right {
+                        width: max-content;
+                        &:hover {
+                            .item-bottom-bar {
+                                width: 100%;
+                            }
+                        }
+                        .d-navitem-text {
+                            font-family: var(--font-Poppins), sans-serif;
+                            font-weight: 300;
+                            font-size: 16px;
+                            color: $white;
+                            @include u.breakpoint(lg) {
+                                font-size: 14px;
+                            }
+                        }
+                        .item-bottom-bar {
+                            width: 0%;
+                            height: 1px;
+                            background-color: $white;
+                            transition: all 0.2s ease-in-out;
+                        }
+                        .w-full {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .right {
+                width: 100%;
+                // border: 1px solid yellow;
+                margin-top: 70px;
+                @include u.breakpoint(lg) {
+                    width: calc(100% - 300px);
+                    padding-left: 100px;
+                    margin-top: 0px;
+                }
+                @include u.breakpoint(xl) {
+                    width: calc(100% - 400px);
+                }
+                .body-section {
+                    width: 100%;
+                    .form-card {
+                        width: 100%;
+                        .form-wrapper {
+                            width: 100%;
+                            .input-general {
+                                border-radius: 20px;
+                                background-color: #141414;
+                                height: 50px;
+                                font-family: var(--font-Poppins), sans-serif;
+                                font-weight: 300;
+                                font-size: 14px;
+                                color: $white; 
+                                &::placeholder {
+                                    font-family: var(--font-Poppins), sans-serif;
+                                    font-weight: 300;
+                                    font-size: 14px;
+                                    color: $white; 
+                                }
+                            }
+                            .textarea-cs {
+                                height: 8rem;
+                            }
+                            .select-group-cs {
+                                background-color: #141414;
+                            }
+                            .select-item-cs {
+                                font-family: var(--font-Poppins), sans-serif;
+                                font-weight: 300;
+                                font-size: 14px;
+                                color: $white;  
+                            }
+                            .select-label-cs {
+                                font-family: var(--font-Poppins), sans-serif;
+                                font-weight: 300;
+                                font-size: 14px;
+                                color: $white; 
+                            }
+                            .single-input-wrap {
+                                width: 100%;
+                                margin-bottom: 20px;
+                            }
+                            .duo-input-wrap {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                @include u.breakpoint(md) {
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                }
+                                .duo-item {
+                                    width: 100%;
+                                    margin-bottom: 20px;
+                                    @include u.breakpoint(md) {
+                                        width: calc(50% - 10px);
+                                    }
+                                }
+                            }
+                            .error-msg {
+                                font-family: var(--font-Poppins), sans-serif;
+                                font-size: 14px;
+                                font-weight: 400;
+                                color: red;
+                                margin-top: 7px;
+                            }
+                            .form-subtitle-text {
+                                font-family: var(--font-Poppins), sans-serif;
+                                font-size: 18px;
+                                font-weight: 600;
+                                color: $black;
+                                margin-top: 20px;
+                                margin-bottom: 20px;
+                            }
+                            .shipping-options {
+                                width: 100%;
+                                border-top: 1px solid #1a1a1a20;
+                                .shipping-item {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #1a1a1a20;
+                                    padding: 8px 0px;
+
+                                    .left {
+                                        width: calc(100% - 100px);
+                                        .select-wrap {
+                                            display: flex;
+                                            align-items: center;
+                                        }
+                                        p {
+                                            font-family: var(--font-Poppins), sans-serif;
+                                            font-size: 14px;
+                                            font-weight: 400;
+                                            color: $black;
+                                        }
+                                    }
+                                    .right {
+                                        width: 100px;
+                                        h3 {
+                                            font-family: var(--font-Poppins), sans-serif;
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            color: $black;
+                                            text-align: right;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}                
+.contact-submit-btn {
+    width: max-content;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    &:hover {
+        .btn-wrap {
+            .btn-left {
+                background-color: $yellow;
+                color: $black;
+            }
+            .btn-right {
+                background-color: $yellow;
+                .btn-right-inner {
+                    background-color: $yellow;
+                    .btn-icon1 {
+                        transform: translateX(27px);
+                        color: $black;
+                    }
+                    .btn-icon2 {
+                        transform: translateX(27px);
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+    .btn-wrap {
+        display: flex;
+        .btn-left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 40px;
+            background-color: $sapphire;
+            border-radius: 20px;
+            color: $yellow;
+            font-family: var(--font-century-gothic), sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $sapphire;
+            transition: all 0.2s ease-in-out;
+            // border: 1px solid #fff;
+            .btn-right-inner {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                overflow: hidden;
+                background-color: $sapphire;
+                transition: all 0.2s ease-in-out;
+                .btn-icon {
+                    font-size: 15px;
+                    position: relative;
+                    transition: all 0.2s ease-in-out;
+                    color: $yellow;
+                }
+                .btn-icon1 {
+                    left: -20px;
+                }
+                .btn-icon2 {
+                    top: 0px;
+                    left: -7px;
+                }
+            }
+        }
+    }
+}

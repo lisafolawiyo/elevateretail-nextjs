@@ -1,308 +1,318 @@
 @use './breakpoints' as u;
 @use './variables' as *;
 
-.home-hero-section {
+.home-page {
     width: 100%;
     background-color: $black;
-    padding: 30px 20px 70px 20px;
-    display: flex;
-    justify-content: center;
-    @include u.breakpoint(lg) {
-        height: 100vh;
-        padding: 30px 15px 50px 15px;
+    padding-top: 80px;
+    @include u.breakpoint(md) {
+        padding-top: 120px;
     }
-    .page-wrap {
+}
+
+.home-hero-container {
+    width: 100%;
+    height: calc( 100vh - 80px);
+    padding: 0px 20px;
+    position: relative;
+    @include u.breakpoint(md) {
+        padding: 0px 60px;
+    }
+    .inner {
+        position: relative;
         width: 100%;
-        @include u.breakpoint(sm) {
-            width: 80%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        @include u.breakpoint(md) {
+            border-radius: 30px;
         }
-        // border: 1px solid #fff;
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Same as object-cover */
+            z-index: 1;
+        }
+        .mobile-bg {
+            display: block;
+            @include u.breakpoint(md) {
+                display: none;
+            }
+        }
+        .dekstop-bg {
+            display: none;
+            @include u.breakpoint(md) {
+                display: block;
+            }
+        }
+        .content {
+            width: 80%;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            padding: 20px;
+            background-color: $black;
+            z-index: 5;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            @include u.breakpoint(md) {
+                width: 400px;
+                padding: 30px;
+                left: 100px;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+            @include u.breakpoint(lg) {
+                width: 600px;
+            }
+            .subject-tag {
+                width: max-content;
+                display: flex;
+                align-items: flex-end;
+                width: 100%;
+                margin-bottom: 10px;
+                span {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    margin-right: 10px;
+                    margin-bottom: 3px;
+                }
+                .tag-text {
+                    font-family: var(--font-Poppins), sans-serif;
+                    font-weight: 300;
+                    font-size: 14px;
+                    color: $white;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1;
+                    @include u.breakpoint(md) {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .text {
+                font-family: var(--font-Poppins), sans-serif;
+                font-weight: 400;
+                font-size: 33px;
+                color: $white;
+                margin: 0;
+                padding: 0;
+                line-height: 1.1;
+                @include u.breakpoint(md) {
+                    font-weight: 300;
+                    font-size: 53px;
+                }
+                @include u.breakpoint(lg) {
+                    font-size: 63px;
+                }
+            }
+        }
+    }
+}
+
+.who-we-are {
+    width: 100%;
+    padding: 0px 20px;
+    margin-top: 50px;
+    @include u.breakpoint(md) {
+        padding: 0px 60px;
+    }
+    .subject-tag {
+        width: max-content;
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        margin-bottom: 10px;
+        span {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $white;
+            margin-right: 10px;
+            margin-bottom: 3px;
+        }
+        .tag-text {
+            font-family: var(--font-Poppins), sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: $white;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            @include u.breakpoint(md) {
+                font-size: 16px;
+            }
+        }
+    }
+    .text {
+        font-family: var(--font-Poppins), sans-serif;
+        font-weight: 100;
+        font-size: 28px;
+        color: $white;
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+        @include u.breakpoint(md) {
+            font-size: 43px;
+        }
+    }
+    .divider {
+        width: 100%;
+        height: 1px;
+        background-color: rgb(85, 85, 85);
+        margin-top: 50px;
+    }
+}
+
+.our-work-section {
+    width: 100%;
+    padding: 0px 20px;
+    margin-top: 50px;
+    @include u.breakpoint(md) {
+        padding: 0px 60px;
+    }
+    .inner {
+        width: 100%;
         .header {
             width: 100%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            .logo-wrap {
-                position: relative;
-                width: 170px;
-                height: 40px;
-                // border: 1px solid #fff;
-            }
-        }
-        .page-body {
-            display: flex;
             flex-direction: column;
-            margin-top: 100px;
-            @include u.breakpoint(lg) {
-                flex-direction: row;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            @include u.breakpoint(md) {
+                align-items: flex-end;
             }
-            .left {
+            .head-wrap {
                 width: 100%;
-                @include u.breakpoint(lg) {
-                    width: 300px;
+                @include u.breakpoint(md) {
+                    width: 500px;
                 }
-                @include u.breakpoint(xl) {
-                    width: 400px;
+                .subject-tag {
+                    width: 100%;
+                    display: flex;
+                    align-items: flex-end;
+                    width: max-content;
+                    margin-bottom: 10px;
+                    @include u.breakpoint(md) {
+                        width: 500px;
+                    }
+                    span {
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background-color: $gray-x11;
+                        margin-right: 10px;
+                        margin-bottom: 3px;
+                    }
+                    .tag-text {
+                        font-family: var(--font-Poppins), sans-serif;
+                        font-weight: 200;
+                        font-size: 14px;
+                        color: $gray-x11;
+                        margin: 0;
+                        padding: 0;
+                        line-height: 1;
+                        @include u.breakpoint(md) {
+                            font-size: 16px;
+                        }
+                    }
                 }
-                h1 {
-                    // text-transform: capitalize;
-                    font-family: var(--font-Poppins), sans-serif;
-                    font-weight: 600;
-                    font-size: 35px;
-                    line-height: 40px;
-                    color: $white;
-                }
-                p {
+                .text {
                     font-family: var(--font-Poppins), sans-serif;
                     font-weight: 300;
-                    font-size: 16px;
+                    font-size: 28px;
                     color: $white;
-                    margin-top: 30px;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.2;
+                    @include u.breakpoint(md) {
+                        font-weight: 300;
+                        font-size: 43px;
+                    }
                 }
-                .socials {
+            }
+        }
+    }
+}
+
+.product-section {
+    width: 100%;
+    .product-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        gap: 1.5rem;
+        @include u.breakpoint(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .product-card {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+            .product-image {
+                position: relative;
+                width: 100%;
+                // aspect-ratio: 4 / 3;
+                overflow: hidden;
+                &:before {
+                    float: left;
+                    padding-top: 70%;
+                    content: '';
+                }
+                &:after {
+                    display: block;
+                    content: '';
+                    clear: both;
+                }
+            }
+            .product-details {
+                width: 100%;
+                margin-top: 20px;
+                .subject-tag {
                     width: 100%;
-                    margin-top: 50px;
-                    h3 {
+                    display: flex;
+                    align-items: flex-end;
+                    width: max-content;
+                    margin-bottom: 10px;
+                    @include u.breakpoint(md) {
+                        width: max-content;
+                    }
+                    span {
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background-color: $white;
+                        margin-right: 10px;
+                        margin-bottom: 3px;
+                    }
+                    .tag-text {
                         font-family: var(--font-Poppins), sans-serif;
                         font-weight: 300;
-                        font-size: 16px;
-                        color: $white; 
-                    }
-                    .social-icons {
-                        width: max-content;
-                        display: flex;
-                        flex-wrap: wrap;
-                        margin-top: 10px;
-                        .icon-link-wrap {
-                            width: 35px;
-                            height: 35px;
-                            background-color: $yellow;
-                            border-radius: 50%;
-                            margin-right: 7px;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            transition: all 0.2s ease-in-out;
-                            &:hover {
-                                background-color: $sapphire;
-                                .social-icon {
-                                    color: $yellow;
-                                }
-                            }
-                            .social-icon {
-                                font-size: 16px;
-                                transition: all 0.2s ease-in-out;
-                                color: $black;
-                            }
-                        }
+                        font-size: 14px;
+                        color: $white;
+                        margin: 0;
+                        padding: 0;
+                        line-height: 1;
                     }
                 }
-            }
-            .right {
-                width: 100%;
-                // border: 1px solid yellow;
-                margin-top: 70px;
-                @include u.breakpoint(lg) {
-                    width: calc(100% - 300px);
-                    padding-left: 100px;
-                    margin-top: 0px;
-                }
-                @include u.breakpoint(xl) {
-                    width: calc(100% - 400px);
-                }
-                .body-section {
-                    width: 100%;
-                    .form-card {
-                        width: 100%;
-                        .form-wrapper {
-                            width: 100%;
-                            .input-general {
-                                border-radius: 20px;
-                                background-color: #141414;
-                                height: 50px;
-                                font-family: var(--font-Poppins), sans-serif;
-                                font-weight: 300;
-                                font-size: 14px;
-                                color: $white; 
-                                &::placeholder {
-                                    font-family: var(--font-Poppins), sans-serif;
-                                    font-weight: 300;
-                                    font-size: 14px;
-                                    color: $white; 
-                                }
-                            }
-                            .textarea-cs {
-                                height: 8rem;
-                            }
-                            .select-group-cs {
-                                background-color: #141414;
-                            }
-                            .select-item-cs {
-                                font-family: var(--font-Poppins), sans-serif;
-                                font-weight: 300;
-                                font-size: 14px;
-                                color: $white;  
-                            }
-                            .select-label-cs {
-                                font-family: var(--font-Poppins), sans-serif;
-                                font-weight: 300;
-                                font-size: 14px;
-                                color: $white; 
-                            }
-                            .single-input-wrap {
-                                width: 100%;
-                                margin-bottom: 20px;
-                            }
-                            .duo-input-wrap {
-                                width: 100%;
-                                display: flex;
-                                flex-direction: column;
-                                @include u.breakpoint(md) {
-                                    flex-direction: row;
-                                    justify-content: space-between;
-                                }
-                                .duo-item {
-                                    width: 100%;
-                                    margin-bottom: 20px;
-                                    @include u.breakpoint(md) {
-                                        width: calc(50% - 10px);
-                                    }
-                                }
-                            }
-                            .error-msg {
-                                font-family: var(--font-Poppins), sans-serif;
-                                font-size: 14px;
-                                font-weight: 400;
-                                color: red;
-                                margin-top: 7px;
-                            }
-                            .form-subtitle-text {
-                                font-family: var(--font-Poppins), sans-serif;
-                                font-size: 18px;
-                                font-weight: 600;
-                                color: $black;
-                                margin-top: 20px;
-                                margin-bottom: 20px;
-                            }
-                            .shipping-options {
-                                width: 100%;
-                                border-top: 1px solid #1a1a1a20;
-                                .shipping-item {
-                                    width: 100%;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    border-bottom: 1px solid #1a1a1a20;
-                                    padding: 8px 0px;
-
-                                    .left {
-                                        width: calc(100% - 100px);
-                                        .select-wrap {
-                                            display: flex;
-                                            align-items: center;
-                                        }
-                                        p {
-                                            font-family: var(--font-Poppins), sans-serif;
-                                            font-size: 14px;
-                                            font-weight: 400;
-                                            color: $black;
-                                        }
-                                    }
-                                    .right {
-                                        width: 100px;
-                                        h3 {
-                                            font-family: var(--font-Poppins), sans-serif;
-                                            font-size: 16px;
-                                            font-weight: 600;
-                                            color: $black;
-                                            text-align: right;
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                .text {
+                    font-family: var(--font-Poppins), sans-serif;
+                    font-weight: 200;
+                    font-size: 25px;
+                    color: #929292;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.2;
+                    @include u.breakpoint(md) {
+                        font-size: 25px;
                     }
-                }
-            }
-        }
-    }
-}                
-.contact-submit-btn {
-    width: max-content;
-    padding: 0px;
-    margin: 0px;
-    cursor: pointer;
-    &:hover {
-        .btn-wrap {
-            .btn-left {
-                background-color: $yellow;
-                color: $black;
-            }
-            .btn-right {
-                background-color: $yellow;
-                .btn-right-inner {
-                    background-color: $yellow;
-                    .btn-icon1 {
-                        transform: translateX(27px);
-                        color: $black;
-                    }
-                    .btn-icon2 {
-                        transform: translateX(27px);
-                        color: $black;
-                    }
-                }
-            }
-        }
-    }
-    .btn-wrap {
-        display: flex;
-        .btn-left {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 200px;
-            height: 40px;
-            background-color: $sapphire;
-            border-radius: 20px;
-            color: $yellow;
-            font-family: var(--font-century-gothic), sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.2s ease-in-out;
-        }
-        .btn-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: $sapphire;
-            transition: all 0.2s ease-in-out;
-            // border: 1px solid #fff;
-            .btn-right-inner {
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items: center;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                overflow: hidden;
-                background-color: $sapphire;
-                transition: all 0.2s ease-in-out;
-                .btn-icon {
-                    font-size: 15px;
-                    position: relative;
-                    transition: all 0.2s ease-in-out;
-                    color: $yellow;
-                }
-                .btn-icon1 {
-                    left: -20px;
-                }
-                .btn-icon2 {
-                    top: 0px;
-                    left: -7px;
                 }
             }
         }

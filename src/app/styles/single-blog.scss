@@ -1,0 +1,340 @@
+@use './breakpoints' as u;
+@use './variables' as *;
+
+.page-single-note {
+    width: 100%;
+    // padding: 20px;
+    padding-bottom: 100px;
+    background-color: $black;
+    // position: relative;
+    // @include u.breakpoint(md) {
+    //     padding: 60px;
+    // }
+    .header {
+        width: 100%;
+        position: relative;
+        // border: 1px solid #fff;
+        padding-top: 60px;
+        @include u.breakpoint(md) {
+            height: 100vh;
+            padding-top: 0px;
+        }
+        .note-thumbnail {
+            width: 100%;
+            aspect-ratio: 6 / 4;
+            background-size: cover;
+            background-position: center;
+            // margin-bottom: 10px;
+            position: relative;
+            &:before {
+                float: left;
+                padding-top: 67%;
+                content: '';
+            }
+            &:after {
+                display: block;
+                content: '';
+                clear: both;
+            }
+            @include u.breakpoint(md) {
+                width: 66%;
+                height: 80vh;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+        .subject {
+            // background-color: $black;
+            // padding: 40px;
+            width: 100%;
+            padding: 0px 20px;
+            margin-top: 20px;
+            @include u.breakpoint(md) {
+                background-color: $black;
+                padding: 40px 40px;
+                margin-top: 0px;
+                width: 43%;
+                position: absolute;
+                left: 60px;
+                top: 40vh;
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px; 
+            }
+            .subject-tag {
+                display: none;
+                @include u.breakpoint(md) {
+                    display: flex;
+                    align-items: flex-end;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                span {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background-color: $gray-x11;
+                    margin-right: 10px;
+                    margin-bottom: 3px;
+                }
+                .tag-text {
+                    font-family: var(--font-Poppins), sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $gray-x11;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1;
+                }
+            }
+            .title {
+                font-family: var(--font-Poppins), sans-serif;
+                font-weight: 400;
+                font-size: 28px;
+                color: $white;
+                margin: 0;
+                padding: 0;
+                line-height: 1.2;
+                @include u.breakpoint(md) {
+                    font-size: 35px;
+                }
+            }
+
+        }
+        .tag {
+            position: absolute;
+            display: none;
+        }
+    }
+    .note-container {
+        width: 100%;
+        // border: 1px solid yellow;
+    }
+}
+
+.single-post-section {
+    width: 100%;
+    margin-top: 50px;
+    // border: 1px solid #fff;
+    @include u.breakpoint(md) {
+        margin-top: 100px;
+    }
+    .note-body {
+        width: 100%;
+        padding-bottom: 100px;
+        @include u.breakpoint(md) {
+            display: flex;
+        }
+        .left {
+            display: none;
+            width: 100%;
+            // border: 1px solid #fff;
+            padding: 0px 20px 0px 20px;
+            @include u.breakpoint(md) {
+                display: block;
+                width: 34%;
+                padding: 0px 0px 0px 60px;
+            }
+        }
+        .right {
+            width: 100%;
+            // border: 1px solid #fff;
+            padding: 0px 20px 0px 20px;
+            @include u.breakpoint(md) {
+                width: 66%;
+                padding: 0px 60px 0px 0px;
+            }
+            h1,h2,h3,h4,h5,p,li,a {
+                color: $white;
+                font-family: var(--font-Poppins), sans-serif;
+                margin-bottom: 20px;
+            }
+            h1 {
+                font-weight: 400;
+                font-size: 35px;
+            }
+            h2 {
+                font-weight: 300;
+                font-size: 27px;
+            }
+            h3 {
+                font-weight: 300;
+                font-size: 22px;
+            }
+            p {
+                font-weight: 300;
+                font-size: 16px;
+                color: $gray-x11;
+            }
+            .end-of-note {
+                width: 100%;
+                height: 1px;
+                background-color: $gray-x11;
+                margin-top: 100px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+.related-notes-section {
+    width: 100%;
+    @include u.breakpoint(md) {
+        display: flex;
+    }
+    .sidebar {
+        width: 100%;
+        // border: 1px solid yellow;
+        padding: 0px 20px 0px 20px;
+        margin-bottom: 30px;
+        @include u.breakpoint(md) {
+            width: 34%;
+            padding: 0px 0px 0px 60px;
+            margin-bottom: 0px;
+        }
+        .related-notes-head {
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            // border: 1px solid #fff;
+            margin-right: 70px;
+            margin-bottom: 20px;
+            span {
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $gray-x11;
+                margin-right: 10px;
+                margin-bottom: 3px;
+            }
+            .related-notes-text {
+                font-family: var(--font-Poppins), sans-serif;
+                font-weight: 600;
+                font-size: 16px;
+                text-transform: capitalize;
+                color: $gray-x11;
+                margin: 0;
+                padding: 0;
+                line-height: 1;
+            }
+        }
+        .item-wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            .sidebar-item {
+                width: max-content;
+                display: flex;
+                align-items: flex-end;
+                margin-right: 40px;
+                margin-bottom: 20px;
+                // border: 1px solid #fff;
+                h1 {
+                    font-family: var(--font-Poppins), sans-serif;
+                    font-weight: 400;
+                    font-size: 22px;
+                    color: $gray-x11;
+                    margin: 0;
+                    margin-right: 3px;
+                    padding: 0;
+                    line-height: 1;
+                    display: inline-block;
+                    // vertical-align: top;      
+                }
+                span {
+                    font-family: var(--font-Poppins), sans-serif;
+                    font-weight: 300;
+                    font-size: 14px;
+                    color: $gray-x11;
+                    margin: 0;
+                    margin-bottom: 3px;
+                    padding: 0;
+                    line-height: 1;           
+                }
+            }
+        }
+    }
+    .related-notes-container {
+        width: 100%;
+        // border: 1px solid #fff;
+        padding: 0px 20px 0px 20px;
+        @include u.breakpoint(md) {
+            width: 66%;
+            padding: 0px 60px 0px 0px;
+        }
+        .related-notes {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            // border: 1px solid yellow;
+            @include u.breakpoint(md) {
+               gap: 40px;
+            }
+            .related-note {
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 50px;
+                @include u.breakpoint(md) {
+                    flex: 0 1 calc((100% - 40px) / 2);
+                    margin-bottom: 0px;
+                }
+                // @include u.breakpoint(lg) {
+                //     flex: 0 1 calc((100% - 80px) / 3);
+                // }
+                .note-thumbnail {
+                    width: 100%;
+                    aspect-ratio: 6 / 4;
+                    background-color: $black;
+                    background-size: cover;
+                    background-position: center;
+                    // margin-bottom: 10px;
+                    position: relative;
+                    &:before {
+                        float: left;
+                        padding-top: 67%;
+                        content: '';
+                    }
+                    &:after {
+                        display: block;
+                        content: '';
+                        clear: both;
+                    }
+                }
+                .note-detail {
+                    width: 100%;
+                    margin-top: 20px;
+                    .tag {
+                        width: 100%;
+                        display: flex;
+                        align-items: flex-end;
+                        // border: 1px solid #fff;
+                        margin-bottom: 10px;
+                        span {
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            background-color: $gray-x11;
+                            margin-right: 10px;
+                            margin-bottom: 3px;
+                        }
+                        .tag-text {
+                            font-family: var(--font-Poppins), sans-serif;
+                            font-weight: 200;
+                            font-size: 14px;
+                            color: $gray-x11;
+                            margin: 0;
+                            padding: 0;
+                            line-height: 1;
+                        }
+                    }
+                    h3 {
+                        font-family: var(--font-Poppins), sans-serif;
+                        font-weight: 400;
+                        font-size: 22px;
+                        color: $white;
+                        line-height: 25px;          
+                    }
+                }
+            }
+        }
+    }
+}
