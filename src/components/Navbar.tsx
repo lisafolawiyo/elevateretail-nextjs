@@ -147,7 +147,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href={'/'} className='m-navitem-link' onClick={toggleMenu}>
+            <Link href={'/contact'} className='m-navitem-link' onClick={toggleMenu}>
               <span className='m-navitem-text'>Contact</span>
             </Link>
           </li>
@@ -155,7 +155,8 @@ function Navbar() {
         <div className='m-btn-wrap'>
           <Link
             href={'/contact'}
-            className="link-btn1 m-nav-btn">
+            className="link-btn1 m-nav-btn"
+            onClick={toggleMenu}>
               <div className='btn-wrap'>
                   <div className='btn-left'>
                       <span>Start a project</span>
