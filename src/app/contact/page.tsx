@@ -1,11 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 export const metadata: Metadata = {
   title: "Elevate Retail | Elevate Your Brand with High-Performance Web & E-commerce Solutions",
   description: "We design and develop custom websites and e-commerce platforms that help retail and service businesses in Lagos and beyond stand out, sell more, and scale fast.",
@@ -19,12 +17,12 @@ export default function ContactPage() {
           <div className='subject-tag'>
               <span></span><h3 className='tag-text'>Contact</h3>
           </div>
-          <h1 className="head-text">It's nice to meet ya</h1>
+          <h1 className="head-text">It&apos;s nice to meet ya</h1>
         </div>
         <div className="page-body">
           <div className="left">
             <p className="title-desc">
-             Fill out the form below and let’s take your brand to the next level.
+             Fill out the form below and let&apos;s take your brand to the next level.
             </p>
             <div className="socials">
               <h3>Follow us</h3>

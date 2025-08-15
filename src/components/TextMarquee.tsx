@@ -8,15 +8,15 @@ const TextMarquee: React.FC = () => {
       <div className="wrapper">
         <div className="marquee-text rotate-left fadeout-horizontal">
           <div className="marquee-text-track">
-            <Link href={'/contact'} className="link-item"><p>Let's work together.</p></Link>
-            <Link href={'/contact'} className="link-item"><p>Let's work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p>Let&apos;s work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p>Let&apos;s work together.</p></Link>
             {/* <p>CSS</p>
             <p>TailwindCSS</p>
             <p>Accessibility</p>
             <p>React</p>
             <p>Angular</p> */}
-            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let's work together.</p></Link>
-            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let's work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let&apos;s work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let&apos;s work together.</p></Link>
             {/* <p aria-hidden="true">CSS</p>
             <p aria-hidden="true">TailwindCSS</p>
             <p aria-hidden="true">Accessibility</p>
@@ -33,15 +33,15 @@ const TextMarquee: React.FC = () => {
               } as React.CSSProperties
             }
             className="marquee-text-track">
-            <Link href={'/contact'} className="link-item"><p>Let's work together.</p></Link>
-            <Link href={'/contact'} className="link-item"><p>Let's work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p>Let&apos;s work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p>Let&apos;s work together.</p></Link>
             {/* <p>CSS</p>
             <p>TailwindCSS</p>
             <p>Accessibility</p>
             <p>React</p>
             <p>Angular</p> */}
-            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let's work together.</p></Link>
-            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let's work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let&apos;s work together.</p></Link>
+            <Link href={'/contact'} className="link-item"><p aria-hidden="true">Let&apos;s work together.</p></Link>
             {/* <p aria-hidden="true">CSS</p>
             <p aria-hidden="true">TailwindCSS</p>
             <p aria-hidden="true">Accessibility</p>

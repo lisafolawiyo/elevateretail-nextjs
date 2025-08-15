@@ -18,7 +18,7 @@ function Footer() {
       <div className='footer-inner'>
         <div className='top'>
           <div className='left'>
-            <h1>Let's start your next big win</h1>
+            <h1>Let&apos;s start your next big win</h1>
             <Link
             href={'/contact'}
             className="link-btn1 f-link-btn">

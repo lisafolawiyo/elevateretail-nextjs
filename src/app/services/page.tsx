@@ -16,7 +16,7 @@ function Services() {
                         <div className='subject-tag'>
                             <span></span><h3 className='tag-text'>services</h3>
                         </div>
-                        <h1 className='hero-text1'>We're a creative and digital marketing agency with expertise.</h1>
+                        <h1 className='hero-text1'>We&apos;re a creative and digital marketing agency with expertise.</h1>
                     </div>
                     <div className='right'></div>
                 </div>
@@ -66,7 +66,7 @@ function Services() {
                     </div>
                     <div className='service-item-body'>
                         <div className='service-item-left'>
-                            <h3>We define your brand's strategy, then design logos, colors, and typography that make it unforgettable.</h3>
+                            <h3>We define your brand&apos;s strategy, then design logos, colors, and typography that make it unforgettable.</h3>
                         </div>
                         <div className='service-item-right'>
                             <div className='service-list-container'>
